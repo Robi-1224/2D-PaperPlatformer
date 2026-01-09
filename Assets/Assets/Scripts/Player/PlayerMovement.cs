@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+     
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -31,16 +31,16 @@ public class PlayerMovement : MonoBehaviour
         {
             _grounded = false;
             _rb.AddForce(new Vector2(0,transform.position.y) *_jumpForce,ForceMode2D.Impulse);
-            Debug.Log("jump");
         }
     }
 
     public void Movement(InputAction.CallbackContext context)
     {
-        Debug.Log("yes");
+        Vector2 inputValue = context.ReadValue<Vector2>();
         if (context.performed && _grounded)
         {
-
+            Debug.Log("move");
+            
         }
     }
     private void CollisionBehaviourCheck(Collider2D col)
