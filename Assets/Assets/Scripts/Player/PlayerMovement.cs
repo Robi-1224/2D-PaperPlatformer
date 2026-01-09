@@ -21,22 +21,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
+        Debug.Log("yes");
         if (context.performed && _grounded)
         {
             _grounded = false;
-            _rb.AddForceY(transform.position.y *_jumpForce, ForceMode2D.Impulse);
+            _rb.AddForce(new Vector2(0,transform.position.y) *_jumpForce,ForceMode2D.Impulse);
             Debug.Log("jump");
         }
     }
 
     public void Movement(InputAction.CallbackContext context)
     {
-        if (context.performed && _grounded && !_dead)
+        Debug.Log("yes");
+        if (context.performed && _grounded)
         {
 
         }
