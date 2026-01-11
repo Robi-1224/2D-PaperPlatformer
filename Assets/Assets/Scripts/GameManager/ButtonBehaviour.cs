@@ -14,8 +14,16 @@ public class ButtonBehaviour : MonoBehaviour
     }
     public void SelectCharacterBehaviour()
     {
-        Selectable newButton = playerSelectButton.FindSelectableOnRight();
+        Selectable newButton;
+        if (playerSelectButton.name == "Molly")
+        {
+             newButton = playerSelectButton.FindSelectableOnRight();
+        } else
+        {
+             newButton = playerSelectButton.FindSelectableOnLeft();
+        }
         newButton.Select();
         playerSelectButton.interactable = false;
     }
+
 }

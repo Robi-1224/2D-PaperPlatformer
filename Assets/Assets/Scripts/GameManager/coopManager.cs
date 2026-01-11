@@ -15,33 +15,7 @@ public class coopManager : MonoBehaviour
        Time.timeScale =0;
     }
 
-    public void OnPlayerSelect()
-    {
-        if(Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame)
-        {
-            SwitchToGamepad(_player2Input);
-        }else if(Keyboard.current!=null && Keyboard.current.enterKey.wasPressedThisFrame)
-        {
-            SwitchToKeyboard(_player1Input);
-            Debug.Log("Keyboard");
-        }
-    }
-
-    private void SwitchToKeyboard(PlayerInput input)
-    {
-        input.SwitchCurrentControlScheme(
-            "Keyboard&Mouse",
-            Keyboard.current
-        );
-    }
-
-    private void SwitchToGamepad(PlayerInput input)
-    {
-        input.SwitchCurrentControlScheme(
-            "Gamepad",
-            Gamepad.current
-        );
-    }
+   
     public void PlayerReconnected()
     {
         Time.timeScale = 1f;
