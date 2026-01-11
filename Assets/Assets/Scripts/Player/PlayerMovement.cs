@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     [SerializeField] LayerMask _groundLayer;
     private Rigidbody2D _rb;
+
+    [Header("Variables")]
+    private Vector2 moveInput;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -21,12 +24,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        MovementBehaviour();
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        Debug.Log("yes");
         if (context.performed && _grounded)
         {
             _grounded = false;
@@ -34,13 +36,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Movement(InputAction.CallbackContext context)
+    private void MovementBehaviour()
     {
-        Vector2 inputValue = context.ReadValue<Vector2>();
-        if (context.performed && _grounded)
+        transform.Translate(moveInput.x * _speed * Time.deltaTime,0 ,0);
+    }
+
+    public void MovementInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
         {
-            Debug.Log("move");
-            
+            moveInput = context.ReadValue<Vector2>();
+        }
+        else if (context.canceled)
+        {
+            moveInput.x = 0;
         }
     }
     private void CollisionBehaviourCheck(Collider2D col)
