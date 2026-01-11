@@ -110,4 +110,4 @@ MonoBehaviour:
   _offSet: 3
   zoomOutAmount: 1
   zoomOutSpeed: 5
-  zoomInAmount: 1
+  zoomInAmount: 2
