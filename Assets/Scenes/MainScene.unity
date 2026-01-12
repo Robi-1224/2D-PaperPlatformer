@@ -221,6 +221,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &587637713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7531167831779973271, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+  m_PrefabInstance: {fileID: 1632158492970329557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &725689269 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2278964500303151247, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
@@ -397,7 +402,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2730818294628433555, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4447293578514227693, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_Enabled
@@ -417,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4447293578514227693, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4447293578514227693, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.size
@@ -734,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4447293578514227693, guid: 5ae36031d477a854987ec85b5822e6ac, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4510702631594630175, guid: 5ae36031d477a854987ec85b5822e6ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -793,6 +798,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 256457234}
     m_Modifications:
+    - target: {fileID: 707277480117248522, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 707277480117248522, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 707277480117248522, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2278964500303151247, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -881,6 +898,10 @@ PrefabInstance:
       propertyPath: _player2Input
       value: 
       objectReference: {fileID: 1067911086}
+    - target: {fileID: 4374831493331977662, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: _characterSelectPanel
+      value: 
+      objectReference: {fileID: 587637713}
     - target: {fileID: 7531167831779973271, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
       propertyPath: m_Name
       value: ChooseCharacterPanel
@@ -893,6 +914,22 @@ PrefabInstance:
       propertyPath: _player2Input
       value: 
       objectReference: {fileID: 1067911086}
+    - target: {fileID: 7844238592658402740, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: _characterSelectPanel
+      value: 
+      objectReference: {fileID: 587637713}
+    - target: {fileID: 8802375391084254223, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802375391084254223, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802375391084254223, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
