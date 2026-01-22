@@ -51,7 +51,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovementBehaviour()
     {
-        transform.Translate(moveInput.x * _speed * Time.deltaTime,0 ,0);
+        if (moveInput.x != 0)
+        {
+            transform.Translate(moveInput.x * _speed * Time.deltaTime, 0, 0);
+        }
     }
 
     public void MovementInput(InputAction.CallbackContext context)
