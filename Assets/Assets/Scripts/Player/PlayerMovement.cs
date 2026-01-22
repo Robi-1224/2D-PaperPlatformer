@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Variables")]
     private Vector2 moveInput;
+    private int _henryJumpCount = 2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -25,6 +26,18 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovementBehaviour();
+    }
+
+    public void HenryDoubleJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && _henryJumpCount != 0)
+        {
+            _rb.linearVelocityY = 0;
+            _rb.AddForce(new Vector2(0, transform.position.y) * _jumpForce, ForceMode2D.Impulse);
+            _grounded = false;
+            _henryJumpCount--;
+        }
+
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -57,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         if ((_groundLayer.value & (1<< col.gameObject.layer ))!=0)
         {
             _grounded = true;
+            _henryJumpCount = 2;
         }
     }
 

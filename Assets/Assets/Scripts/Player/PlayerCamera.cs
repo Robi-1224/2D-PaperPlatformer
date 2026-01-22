@@ -8,18 +8,17 @@ public class PlayerCamera : MonoBehaviour
     [Header("Settings")]
     [SerializeField] Vector3 _camOffSet;
     private bool zoomIn = false;
-    private float timer;
-    [Header("Components")]
-    private Camera _camera;
-    private Transform _playerTransform;
-    private Transform _player2Trans;
-    private Vector3 velocity = Vector3.zero;
-    [Header("Settings")]
     [SerializeField] float _minScreenAspectSize;
     [SerializeField] float _offSet;
     [SerializeField] float zoomOutAmount;
     [SerializeField] float zoomOutSpeed;
     [SerializeField] float zoomInAmount;
+    private float timer;
+    [Header("Components")]
+    private Camera _camera;
+    private Transform _playerTransform;
+    private Transform _player2Trans;
+   
 
     void Awake()
     {

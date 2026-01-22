@@ -23,6 +23,7 @@ public class ButtonBehaviour : MonoBehaviour
              newButton = playerSelectButton.FindSelectableOnLeft();
         }
         newButton.Select();
+        newButton.interactable = true;
         playerSelectButton.interactable = false;
     }
 

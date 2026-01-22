@@ -400,9 +400,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 556313191651336682, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2730818294628433555, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730818294628433555, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
+      propertyPath: _jumpForce
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4447293578514227693, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_Enabled
@@ -414,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4447293578514227693, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: 
+      value: Keyboard&Mouse
       objectReference: {fileID: 0}
     - target: {fileID: 4447293578514227693, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_ActionEvents.Array.size
@@ -489,6 +497,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4447293578514227693, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HenryDoubleJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447293578514227693, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: coopManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -547,6 +559,10 @@ PrefabInstance:
     - target: {fileID: 5844405784535635634, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
       propertyPath: m_Name
       value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844405784535635634, guid: 1fd65c8d4c2b90a4bb6c6a8c8852f489, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -785,6 +801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5844405784535635634, guid: 5ae36031d477a854987ec85b5822e6ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -905,6 +925,10 @@ PrefabInstance:
     - target: {fileID: 7531167831779973271, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
       propertyPath: m_Name
       value: ChooseCharacterPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531167831779973271, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7844238592658402740, guid: e8ab1bff1e038b240bee826d0ec4c4ae, type: 3}
       propertyPath: _player1Input
