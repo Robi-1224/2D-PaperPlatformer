@@ -49,11 +49,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void FlipSprite()
+    {
+
+    }
+
     private void MovementBehaviour()
     {
         if (moveInput.x != 0)
         {
             transform.Translate(moveInput.x * _speed * Time.deltaTime, 0, 0);
+            
         }
     }
 
