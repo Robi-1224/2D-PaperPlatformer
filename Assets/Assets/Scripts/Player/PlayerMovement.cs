@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     [SerializeField] LayerMask _groundLayer;
     private Rigidbody2D _rb;
+    private SpriteRenderer _sprite;
 
     [Header("Variables")]
     private Vector2 moveInput;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed && _henryJumpCount != 0)
         {
             _rb.linearVelocityY = 0;
-            _rb.AddForce(new Vector2(0, transform.position.y) * _jumpForce, ForceMode2D.Impulse);
+            _rb.AddForce(_jumpForce * Vector2.up, ForceMode2D.Impulse);
             _grounded = false;
             _henryJumpCount--;
         }
@@ -44,14 +46,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && _grounded)
         {
+            _rb.AddForce(_jumpForce * Vector2.up,ForceMode2D.Impulse);
             _grounded = false;
-            _rb.AddForce(new Vector2(0,transform.position.y) *_jumpForce,ForceMode2D.Impulse);
         }
     }
 
     private void FlipSprite()
     {
-
+        switch (moveInput.x)
+        {
+            case 1:  _sprite.flipX = false; break;
+            case -1: _sprite.flipX = true; break;
+        }
     }
 
     private void MovementBehaviour()
@@ -59,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput.x != 0)
         {
             transform.Translate(moveInput.x * _speed * Time.deltaTime, 0, 0);
-            
+            FlipSprite();
         }
     }
 
