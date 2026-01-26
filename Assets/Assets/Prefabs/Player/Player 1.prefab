@@ -87,6 +87,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4272908392543955018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9112822071568115473}
+  m_Layer: 0
+  m_Name: Grab trans
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9112822071568115473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272908392543955018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7596750928150656574}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4697650619334962345
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +132,7 @@ GameObject:
   - component: {fileID: 84021054483314627}
   - component: {fileID: 5246082605638273721}
   - component: {fileID: 8137106075187318992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -122,6 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2491453342902521885}
+  - {fileID: 9112822071568115473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &986338030560671693
@@ -242,10 +274,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ecc0d39e7f7b74ba5cea6edfebb86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabRange: 3
+  grabRange: 1
+  throwForce: 15
   interactableLayer:
     serializedVersion: 2
     m_Bits: 8
+  _grabTrans: {fileID: 9112822071568115473}
 --- !u!114 &84021054483314627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,12 +292,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86410dd660cb1824cb6ffab82978d205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 6
-  _jumpForce: 10
+  speed: 6
+  canMove: 1
+  _jumpForce: 5
   _grounded: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  movementDir: {x: 0, y: 0}
 --- !u!50 &5246082605638273721
 Rigidbody2D:
   serializedVersion: 5

@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int _speed;
+    public int speed;
+    public bool canMove = true;
     [SerializeField] private float _jumpForce;
     [SerializeField] private bool _grounded = false;
     private bool _dead = false;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Variables")]
     private Vector2 moveInput;
+    public Vector2 movementDir;
     private int _henryJumpCount = 2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -28,6 +30,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovementBehaviour();
+       
+    }
+
+    public void TurnInputOnOrOff(bool input)
+    {
+        canMove = input;
+        Debug.Log(canMove);
     }
 
     public void HenryDoubleJump(InputAction.CallbackContext context)
@@ -38,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
             _rb.AddForce(_jumpForce * Vector2.up, ForceMode2D.Impulse);
             _grounded = false;
             _henryJumpCount--;
+            
         }
 
     }
@@ -48,23 +58,24 @@ public class PlayerMovement : MonoBehaviour
         {
             _rb.AddForce(_jumpForce * Vector2.up,ForceMode2D.Impulse);
             _grounded = false;
+           
         }
     }
 
     private void FlipSprite()
     {
-        switch (moveInput.x)
-        {
-            case 1:  _sprite.flipX = false; break;
+         switch (moveInput.x)
+         {
+            case 1: _sprite.flipX = false; break;
             case -1: _sprite.flipX = true; break;
-        }
+         }
     }
 
     private void MovementBehaviour()
     {
-        if (moveInput.x != 0)
+        if (moveInput.x != 0 && canMove)
         {
-            transform.Translate(moveInput.x * _speed * Time.deltaTime, 0, 0);
+            transform.Translate(moveInput.x * speed * Time.deltaTime, 0, 0);
             FlipSprite();
         }
     }
@@ -74,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed)
         {
             moveInput = context.ReadValue<Vector2>();
+            movementDir = moveInput;
         }
         else if (context.canceled)
         {
@@ -92,6 +104,5 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         CollisionBehaviourCheck(collision.collider);
-       
     }
 }
